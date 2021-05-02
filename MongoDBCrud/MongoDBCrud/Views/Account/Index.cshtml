@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Accounts</h3>
+    <a href="@Url.Action("Add","Account")">Add New Account</a>
+    <br />
+
+
+
+    <table border="1">
+        <tr>
+
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Option</th>
+
+        </tr>
+
+        @foreach (var account in ViewBag.accounts)
+        {
+
+            <tr>
+
+                <td>@account.Name</td>
+                <td>@account.Surname</td>
+                <td>@account.Price</td>
+                <td>@account.Status</td>
+                <td>
+
+                    <a href="@Url.Action("Edit", "Account", new { id = account.Id }) ">Edit</a>
+                    |
+                    <a href="@Url.Action("Delete","Account", new { id = account.Id })" onClick="return confirm('Are you sure?')">Delete</a>
+
+                </td>
+
+            </tr>
+
+
+        }
+
+
+
+
+    </table>
+
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model MongoDBCrud.Entities.Account
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Page</title>
+</head>
+<body>
+
+
+    @using (Html.BeginForm("Edit", "Account", FormMethod.Post))
+    {
+        <table>
+
+            <tr>
+
+                <td>Name</td>
+                <td>
+
+                    @Html.TextBoxFor(a => a.Name)
+                </td>
+            </tr>
+
+
+
+            <tr>
+
+                <td>Surname</td>
+                <td>
+
+                    @Html.TextBoxFor(a => a.Surname)
+
+
+                </td>
+
+
+
+            </tr>
+
+
+
+            <tr>
+
+                <td>Price</td>
+                <td>
+
+                    @Html.TextBoxFor(a => a.Price)
+
+
+                </td>
+
+
+
+            </tr>
+
+
+
+            <tr>
+
+                <td>Status</td>
+                <td>
+
+                    @Html.CheckBoxFor(a => a.Status)
+
+
+                </td>
+
+
+
+            </tr>
+
+            <tr>
+
+                <td>&nbsp;</td>
+                <td>
+
+                    <input type="submit" value="Save" />
+                    @Html.HiddenFor(a => a.Id)
+
+                </td>
+
+
+
+            </tr>
+
+
+
+        </table>
+
+
+    }
+
+
+</body>
+</html>
+
